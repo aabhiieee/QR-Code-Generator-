@@ -1,0 +1,36 @@
+<html>
+<head>
+<title>giveqr.py</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #0033b3;}
+.s1 { color: #080808;}
+.s2 { color: #067d17;}
+.s3 { color: #1750eb;}
+.s4 { color: #0037a6;}
+</style>
+</head>
+<body bgcolor="#ffffff">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#c0c0c0" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+giveqr.py</font>
+</center></td></tr></table>
+<pre><span class="s0">import </span><span class="s1">pyqrcode</span>
+<span class="s0">import </span><span class="s1">os, shutil</span>
+
+<span class="s1">title=input(</span><span class="s2">&quot;GIVE YOUR QR CODE TITLE&quot;</span><span class="s1">)</span>
+<span class="s1">text=input(</span><span class="s2">&quot;WHAT WOULD YOU LIKE THE QR CODE TO SAY&quot;</span><span class="s1">)</span>
+
+<span class="s1">file_name_svg=title + </span><span class="s2">&quot;.svg&quot;</span>
+<span class="s1">file_name_png=title + </span><span class="s2">&quot;.png&quot;</span>
+<span class="s1">url=pyqrcode.create(text)</span>
+<span class="s1">url.svg(file_name_svg, scale= </span><span class="s3">8</span><span class="s1">)</span>
+<span class="s1">url.png(file_name_png, scale=</span><span class="s3">10</span><span class="s1">)</span>
+
+<span class="s1">os.mkdir(</span><span class="s2">fr&quot;C:\Users\91735\Desktop\</span><span class="s4">{</span><span class="s1">title</span><span class="s4">}</span><span class="s2">&quot;</span><span class="s1">)</span>
+<span class="s1">shutil.move(</span><span class="s2">f&quot;</span><span class="s4">{</span><span class="s1">file_name_png</span><span class="s4">}</span><span class="s2">&quot;</span><span class="s1">,</span><span class="s2">fr&quot;C:\Users\91735\Desktop\</span><span class="s4">{</span><span class="s1">title</span><span class="s4">}</span><span class="s2">&quot;</span><span class="s1">)</span>
+<span class="s1">shutil.move(</span><span class="s2">f&quot;</span><span class="s4">{</span><span class="s1">file_name_svg</span><span class="s4">}</span><span class="s2">&quot;</span><span class="s1">,</span><span class="s2">fr&quot;C:\Users\91735\Desktop\</span><span class="s4">{</span><span class="s1">title</span><span class="s4">}</span><span class="s2">&quot;</span><span class="s1">)</span>
+</pre>
+</body>
+</html>
